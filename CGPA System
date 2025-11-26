@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    float gp[9];   // grade points for 9 subjects
+    float credits[9] = {3.0, 3.0, 3.0, 3.0, 3.0, 0.75, 0.75, 1.5, 1.5};
+    float totalCredits = 19.5;
+    float totalPoints = 0.0, cgpa;
+
+    printf("Enter grade points for 9 subjects:\n");
+
+    for (int i = 0; i < 9; i++) {
+        printf("Subject %d (Credit %.2f): ", i + 1, credits[i]);
+        scanf("%f", &gp[i]);
+        totalPoints += gp[i] * credits[i];
+    }
+
+    cgpa = totalPoints / totalCredits;
+
+    printf("\nTotal Grade Points: %.2f\n", totalPoints);
+    printf("CGPA: %.2f\n", cgpa);
+
+    return 0;
+}
